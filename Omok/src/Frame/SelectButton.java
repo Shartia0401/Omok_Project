@@ -15,12 +15,11 @@ public class SelectButton implements ActionListener{
             Action.select.dispose();
         }
         else{
-            Action.select.dispose();    
+            System.exit(0);
         }
-
     }
 
-    void setbutton() //TODO 사용안함
+    void setbutton()
     {
         for(int i = 0; i < Frame.X; i++)
         {
@@ -36,6 +35,4 @@ public class SelectButton implements ActionListener{
             }
         }
     }
-
-
 }

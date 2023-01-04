@@ -51,8 +51,8 @@ public class Action implements ActionListener{
             select.getContentPane().setBackground(new Color(220,179 ,91));
             select.setIconImage(setIcon());
 
-            JButton YES = new JButton("YES");
-            JButton NO = new JButton("NO");
+            JButton YES = new JButton("재시작");
+            JButton NO = new JButton("종료");
 
             YES.addActionListener(new SelectButton());
             NO.addActionListener(new SelectButton());
@@ -63,7 +63,6 @@ public class Action implements ActionListener{
 
             select.add(YES);
             select.add(NO);
-
 
 
             winnerLabel.setFont(new Font("궁서체", Font.BOLD, 30));
@@ -108,8 +107,6 @@ public class Action implements ActionListener{
         findright();
         findup();
         findhorizontal();
-
-
     }
     
     void AllCheck(int findx, int findy)
@@ -138,10 +135,8 @@ public class Action implements ActionListener{
                     b += 1;
                 }
             } catch (IndexOutOfBoundsException e) {
-                // TODO: handle exception
             }
         }
-
         AllCheck(a,b);
     }
 

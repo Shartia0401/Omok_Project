@@ -13,6 +13,6 @@ public class GamePanel extends JPanel
 
     public void paintComponent(Graphics g)
     {
-        g.drawImage(img, 20, 20, null);
+        g.drawImage(img, 0, 0, null);
     }
 }

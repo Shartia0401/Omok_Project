@@ -3,6 +3,8 @@ package Frame;
 import java.awt.*;
 import javax.swing.*;
 
+import org.w3c.dom.events.MouseEvent;
+
 public class Frame extends JFrame{
 
     public static final int X = 19;
@@ -18,12 +20,14 @@ public class Frame extends JFrame{
         setLayout(null);
         GamePanel a = new GamePanel();
         a.setLayout(null);
-        a.setBounds(-20,-20, 900,900);
+        a.setBounds(0,0, 800,800);
         getContentPane().setBackground(Color.white);
-        buttons();
+
+        // buttons(); // 버튼
+        a.addMouseMotionListener(new mouseMotion());
 
         add(a);
-        add(b);
+        // add(b);
 
 
         setFrame();
@@ -54,6 +58,8 @@ public class Frame extends JFrame{
         }
         b.setOpaque(false);
         b.setBounds(-20,-25, 847, 847);
+
+
         // b.setBounds(-40,-10, 847, 847);
         
 
@@ -64,9 +70,10 @@ public class Frame extends JFrame{
     {
         setTitle("오목");
         // setSize(new Dimension(816,835));
-        setSize(new Dimension(1400,1000));
+        setSize(new Dimension(816,840));
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
+        setResizable(false);
         setVisible(true);
     }
 
