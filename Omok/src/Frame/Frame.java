@@ -14,6 +14,8 @@ public class Frame extends JFrame{
 
     JPanel b;
 
+    public static JButton[][] btns = new JButton[X][Y];
+
     public Frame()
     {
         setIcon();
@@ -34,8 +36,7 @@ public class Frame extends JFrame{
 
     private void buttons()
     {
-        JButton[][] btns = new JButton[X][Y];
-
+        
 
         b = new JPanel();
 
@@ -65,7 +66,7 @@ public class Frame extends JFrame{
     private void setFrame()
     {
         setTitle("오목");
-        setSize(new Dimension(1400,835));
+        setSize(new Dimension(815,835));
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
         setVisible(true);
