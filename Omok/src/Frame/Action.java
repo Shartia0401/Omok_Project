@@ -43,12 +43,12 @@ public class Action implements ActionListener{
         {
             JFrame select = new JFrame("승리!");
             JLabel winnerLabel = new JLabel();
-            select.setSize(new Dimension(400, 400));
+            select.setSize(new Dimension(300, 100));
             select.setLayout(new BorderLayout());
             select.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
             select.setLocationRelativeTo(null);
             select.setVisible(true);
-
+            winnerLabel.setFont(new Font("궁서체", Font.BOLD, 30));
             if(turn)
             {
                 winnerLabel.setText("흑돌 승리");
@@ -59,7 +59,7 @@ public class Action implements ActionListener{
             }
             
 
-            select.add(winnerLabel);
+            select.add(winnerLabel,BorderLayout.CENTER);
 
             Winner = false;
         }

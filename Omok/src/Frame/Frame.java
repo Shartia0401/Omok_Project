@@ -5,10 +5,6 @@ import javax.swing.*;
 
 public class Frame extends JFrame{
 
-    private short BLACK = -1;
-    private short NULL  =  0;
-    private short WHITE =  1;
-
     public static final int X = 19;
     public static final int Y = 19;
 
