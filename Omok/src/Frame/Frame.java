@@ -54,6 +54,7 @@ public class Frame extends JFrame{
         }
         b.setOpaque(false);
         b.setBounds(-20,-25, 847, 847);
+        // b.setBounds(-40,-10, 847, 847);
         
 
         
@@ -62,7 +63,8 @@ public class Frame extends JFrame{
     private void setFrame()
     {
         setTitle("오목");
-        setSize(new Dimension(816,835));
+        // setSize(new Dimension(816,835));
+        setSize(new Dimension(1400,1000));
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
         setVisible(true);

@@ -1,11 +1,9 @@
 package Frame;
 
-import java.awt.Color;
+import javax.swing.*;
 import java.awt.event.*;
 import java.awt.*;
-import javax.swing.JButton;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
+
 
 
 public class Action implements ActionListener{
@@ -15,6 +13,8 @@ public class Action implements ActionListener{
     JButton button;
     private int x;
     private int y;
+
+    public static JFrame select;
 
     @Override
     public void actionPerformed(ActionEvent e) { 
@@ -41,13 +41,31 @@ public class Action implements ActionListener{
 
         if(Winner == true)
         {
-            JFrame select = new JFrame("승리!");
+            select = new JFrame("승리!");
             JLabel winnerLabel = new JLabel();
-            select.setSize(new Dimension(300, 100));
-            select.setLayout(new BorderLayout());
-            select.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            select.setSize(new Dimension(300, 400));
+            select.setLayout(null);
             select.setLocationRelativeTo(null);
             select.setVisible(true);
+            select.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+            select.getContentPane().setBackground(new Color(220,179 ,91));
+            select.setIconImage(setIcon());
+
+            JButton YES = new JButton("YES");
+            JButton NO = new JButton("NO");
+
+            YES.addActionListener(new SelectButton());
+            NO.addActionListener(new SelectButton());
+
+            YES.setBounds(60,200, 80, 50);
+            NO.setBounds(150 ,200, 80, 50);
+            winnerLabel.setBounds(70, 10, 150, 50);
+
+            select.add(YES);
+            select.add(NO);
+
+
+
             winnerLabel.setFont(new Font("궁서체", Font.BOLD, 30));
             if(turn)
             {
@@ -60,27 +78,20 @@ public class Action implements ActionListener{
             
 
             select.add(winnerLabel,BorderLayout.CENTER);
-
+            // setbutton();
             Winner = false;
         }
     }
 
-    void setbutton() //TODO 사용안함
+    Image setIcon()
     {
-        for(int i = 0; i < Frame.X; i++)
-        {
-            for(int j = 0; j < Frame.Y; j++)
-            {
-                Frame.btns[i][j].setText(Integer.toString(i) + " " + Integer.toString(j));
-                Frame.btns[i][j].addActionListener(new Action());
-                Frame.btns[i][j].setBorderPainted(false);
-                Frame.btns[i][j].setContentAreaFilled(false);
-                Frame.btns[i][j].setFocusPainted(false);
-                Frame.btns[i][j].setOpaque(false);
-                Frame.btns[i][j].setBackground(new Color(255,0,0,0));
-            }
-        }
+        ImageIcon icon = new ImageIcon("icon.jpg");
+        Image image = icon.getImage();
+
+        return image;
     }
+
+
 
     private void address(ActionEvent e)
     {
@@ -100,6 +111,7 @@ public class Action implements ActionListener{
 
 
     }
+    
     void AllCheck(int findx, int findy)
     {
         up(button.getBackground(), findx, findy);
