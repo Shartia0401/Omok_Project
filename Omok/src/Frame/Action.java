@@ -65,7 +65,7 @@ public class Action implements ActionListener{
         }
     }
 
-    private void setbutton()
+    void setbutton() //TODO 사용안함
     {
         for(int i = 0; i < Frame.X; i++)
         {
@@ -119,10 +119,14 @@ public class Action implements ActionListener{
         b = y;
         for(int i = 0; i < 5; i++)
         {
-            if(Frame.btns[a][b].getBackground() == Frame.btns[a - 1][b + 1].getBackground()) 
-            {
-                a -= 1;
-                b += 1;
+            try {
+                if(Frame.btns[a][b].getBackground() == Frame.btns[a - 1][b + 1].getBackground()) 
+                {
+                    a -= 1;
+                    b += 1;
+                }
+            } catch (IndexOutOfBoundsException e) {
+                // TODO: handle exception
             }
         }
 
@@ -136,8 +140,14 @@ public class Action implements ActionListener{
         b = y;
         for(int i = 0; i < 5; i++)
         {
-            if(Frame.btns[a][b].getBackground() == Frame.btns[a + 1][b].getBackground()) 
-                a += 1;
+            try {
+                if(Frame.btns[a][b].getBackground() == Frame.btns[a + 1][b].getBackground()) 
+                {
+                    a += 1;
+                }   
+            } catch (IndexOutOfBoundsException e) {
+
+            }
         }
         AllCheck(a,b);
     }
@@ -149,10 +159,14 @@ public class Action implements ActionListener{
         b = y;
         for(int i = 0; i < 5; i++)
         {
-            if(Frame.btns[a][b].getBackground() == Frame.btns[a + 1][b + 1].getBackground()) 
-            {
-                a += 1;
-                b += 1;
+            try {
+                if(Frame.btns[a][b].getBackground() == Frame.btns[a + 1][b + 1].getBackground()) 
+                {
+                    a += 1;
+                    b += 1;
+                }
+            } catch (IndexOutOfBoundsException e) {
+                // TODO: handle exception
             }
             
         }
@@ -166,8 +180,14 @@ public class Action implements ActionListener{
         b = y;
         for(int i = 0; i < 5; i++)
         {
-            if(Frame.btns[a][b].getBackground() == Frame.btns[a][b +1].getBackground()) 
-                b += 1;
+            try {
+                if(Frame.btns[a][b].getBackground() == Frame.btns[a][b +1].getBackground()) 
+                {
+                    b += 1;
+                }
+            } catch (IndexOutOfBoundsException e) {
+
+            }
         }
         AllCheck(a,b);
     }

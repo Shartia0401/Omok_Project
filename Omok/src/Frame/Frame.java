@@ -66,7 +66,7 @@ public class Frame extends JFrame{
     private void setFrame()
     {
         setTitle("오목");
-        setSize(new Dimension(815,835));
+        setSize(new Dimension(816,835));
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
         setVisible(true);
