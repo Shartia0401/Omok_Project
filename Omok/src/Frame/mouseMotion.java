@@ -8,4 +8,9 @@ public class mouseMotion extends MouseAdapter{
     {
         System.out.println(e.getX() +" "+ e.getY());
     }
+
+    public void mousePressed(MouseEvent e)
+    {
+        System.out.print("asd");
+    }
 }

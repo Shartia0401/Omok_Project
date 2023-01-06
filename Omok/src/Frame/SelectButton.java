@@ -9,7 +9,7 @@ public class SelectButton implements ActionListener{
     @Override
     public void actionPerformed(ActionEvent e) {
         JButton button = (JButton)e.getSource();
-        if(button.getText().equals("YES"))
+        if(button.getText().equals("재시작"))
         {
             setbutton();
             Action.select.dispose();

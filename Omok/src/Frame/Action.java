@@ -358,12 +358,12 @@ public class Action implements ActionListener{
     {
         if(turn)
         {
-            BackGround(e, Color.WHITE);
+            BackGround(e, Color.BLACK);
             turn = false;
         }
         else
         {
-            BackGround(e, Color.BLACK);
+            BackGround(e, Color.WHITE);
             turn = true;
         }
     }
@@ -373,6 +373,7 @@ public class Action implements ActionListener{
 
     
         JButton a = (JButton)e.getSource();
+
         a.setBackground(color);
         a.setBorderPainted(true);
         a.setContentAreaFilled(true);

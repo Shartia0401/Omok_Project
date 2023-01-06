@@ -2,8 +2,11 @@ package Frame;
 
 import java.awt.*;
 import javax.swing.*;
+import java.awt.image.BufferedImage;
+import javax.imageio.ImageIO;
+import java.io.IOException;
+import java.io.File;
 
-import org.w3c.dom.events.MouseEvent;
 
 public class Frame extends JFrame{
 
@@ -21,23 +24,51 @@ public class Frame extends JFrame{
         GamePanel a = new GamePanel();
         a.setLayout(null);
         a.setBounds(0,0, 800,800);
+        // Drawimage();
+
+
         getContentPane().setBackground(Color.white);
 
-        // buttons(); // 버튼
-        a.addMouseMotionListener(new mouseMotion());
+        buttons(); // 버튼
+        // a.addMouseMotionListener(new mouseMotion());
 
         add(a);
-        // add(b);
+        add(b);
 
 
         setFrame();
 
     }
 
+    private void Drawimage()
+    {
+        BufferedImage img;
+        File file = new File("오목.jpg");
+        try
+        {
+            img = ImageIO.read(file);
+        }
+        catch(IOException e)
+        {
+            System.out.println("엄");
+            img = null;
+        }
+
+        JPanel ImagePanel = new JPanel();
+        JLabel ImageIcon = new JLabel(new ImageIcon(img));
+        ImagePanel.add(ImageIcon);
+        ImageIcon.setBounds(0,0, 800,800);
+        add(ImagePanel);
+        ImagePanel.addMouseMotionListener(new mouseMotion());
+        ImagePanel.addMouseListener(new mouseClick());
+
+        ImagePanel.setBounds(0,0,800,820);
+
+
+    }
+
     private void buttons()
     {
-        
-
         b = new JPanel();
 
         b.setLayout(new GridLayout(19,19));
